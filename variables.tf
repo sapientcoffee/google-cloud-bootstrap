@@ -1,26 +1,29 @@
-variable "tf_sa" {
-  description = "Service Account for Terraform - note you must have Service Account Token Creator IAM role for your own account"
-  type        = string
-}
-
-variable "deploy_project" {
+variable "sandbox_project" {
   description = "GCP project to be spun up or down"
   type        = string
 }
 
 variable "bootstrap_project_id" {
   type        = string
-  description = "Bootstrap project ID (tf state etc)"
-  default     = "coffee-bootstrap"
+  description = "Bootstrap project ID"
+  default     = "bootstrap-coffee"
 }
 
-variable "folder_name" {
+
+variable "region" {
+  description = "GCP region"
   type        = string
-  description = "Folder name for projects"
-  default     = "Project Bridge"
+  default = "europe-west1"
 }
-variable "folder_parent" {
-  type        = string
-  description = "Location for the folder parent"
-  default     = "organizations/694643552517"
+
+variable "zone" {
+  description = "GCP zone"
+  type = string
+  default = "europe-west1-c"
+}
+
+
+variable "billing_id" {
+    type = string
+    default = "017C65-6AC5ED-18E460" 
 }
